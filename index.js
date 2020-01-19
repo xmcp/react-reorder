@@ -110,14 +110,14 @@
         });
 
         // Mouse events
-        window.addEventListener('mouseup', this.onMouseUp); // Mouse up
-        window.addEventListener('mousemove', this.onMouseMove); // Mouse move
+        window.addEventListener('mouseup', this.onMouseUp, {passive: false}); // Mouse up
+        window.addEventListener('mousemove', this.onMouseMove, {passive: false}); // Mouse move
 
         // Touch events
-        window.addEventListener('touchend', this.onMouseUp); // Touch up
-        window.addEventListener('touchmove', this.onMouseMove); // Touch move
+        window.addEventListener('touchend', this.onMouseUp, {passive: false}); // Touch up
+        window.addEventListener('touchmove', this.onMouseMove, {passive: false}); // Touch move
 
-        window.addEventListener('contextmenu', this.preventDefault);
+        window.addEventListener('contextmenu', this.preventDefault, {passive: false});
       },
       onMouseUp: function (event) {
         if (event.type.indexOf('touch') >= 0 && !this.state.movedALittle) {
