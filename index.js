@@ -404,7 +404,7 @@
         clearInterval(this.scrollIntervalX);
         this.scrollIntervalX = undefined;
       },
-      componentWillReceiveProps: function (props) {
+      UNSAFE_componentWillReceiveProps: function (props) {
         // Updates list when props changed
         this.setState({
           list: props.list
